@@ -12,15 +12,21 @@ function ObjectiveController() {
 
   const gerar = () => {
     vm.selected = Math.floor(Math.random() * vm.objectives.length);
+    vm.selected2 = Math.floor(Math.random() * vm.roulettes.length);
   }
 
   const init = () => {
     vm.objectives = [
-      'Mais Abates',
-      'Mais Assistências',
-      'Mais Farm',
-      'Menos Mortes',
-      'Mais Dano',
+      { description: 'Mais Abates', icon: 'svg/si-glyph-bed.svg' },
+      { description: 'Mais Assistências', icon: 'svg/si-glyph-bed.svg' },
+      { description: 'Mais Farm', icon: 'svg/si-glyph-bed.svg' },
+      { description: 'Menos Mortes', icon: 'svg/si-glyph-skull.svg' },
+      { description: 'Mais Dano', icon: 'svg/si-glyph-bed.svg' },
+    ];
+
+    vm.roulettes = [
+      { description: 'Pode trocar' },
+      { description: 'Não pode trocar' },
     ];
 
     gerar();
