@@ -11,8 +11,7 @@ function ObjectiveController() {
   const vm = this;
 
   const gerar = () => {
-    vm.selected = vm.objectives[Math.floor(Math.random() * vm.objectives.length)];
-    console.log(vm.selected);
+    vm.selected = Math.floor(Math.random() * vm.objectives.length);
   }
 
   const init = () => {

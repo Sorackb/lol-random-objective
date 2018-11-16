@@ -7,6 +7,7 @@
     <script src="app.js"></script>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
     <style>
       body { padding-top:50px; }
     </style>
@@ -14,11 +15,11 @@
   <body>
     <div ng-app="randomApp">
       <div ng-controller="ObjectiveController as vm">
-        <div class="container">
-          <div class="jumbotron">
-            <h1>{{vm.selected}}</h1>
-            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="vm.gerar()">Gerar</button>
-          </div>
+        <div class="container col-md-2 col-md-offset-5">
+          <ul class="list-group">
+            <button type="button" class="btn btn-info btn-lg btn-block" ng-click="vm.gerar()">Gerar</button>
+            <li ng-repeat="objective in vm.objectives" class="list-group-item" ng-class="{ active: $index == vm.selected }">{{ objective }}</li>
+          </ul>
         </div>
       </div>
     </div>
